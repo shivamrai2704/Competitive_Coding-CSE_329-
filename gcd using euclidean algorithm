@@ -1,0 +1,17 @@
+// C++ program to demonstrate
+// Basic Euclidean Algorithm
+#include <bits/stdc++.h>
+using namespace std;
+gcd(int a, int b)
+{
+	if (a == 0)
+		return b;
+	return gcd(b % a, a);
+}
+int main()
+{
+	int a,b;
+	cout<<"enter two numbers whose gcd has to be calculated\n";
+	cin>>a>>b;
+	cout<<"GCD of "<<a<<" and "<<b<<" is "<<gcd(a,b)<< endl;
+}

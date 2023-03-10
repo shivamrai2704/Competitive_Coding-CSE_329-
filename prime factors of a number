@@ -1,0 +1,20 @@
+//finding prime factors of a number
+//prime factors of a number
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int a,i;
+	cout<<"enter a number whose prime factors are to be found\n";
+	cin>>a;
+	int c=2;
+	while(a>1)
+    {
+        if(a%c==0)
+		{
+        	cout<<c<<" ";
+        	a/=c;
+        }
+        else c++;
+    }
+}

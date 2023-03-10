@@ -1,0 +1,50 @@
+//to check if all the row of matrix are in circular rotation of each other
+#include<bits/stdc++.h>
+#include<string>
+using namespace std;
+int main()
+{
+	int n,i,j;
+	cout<<"enter limit\n";
+	cin>>n;
+	int arr[n][n];
+	cout<<"enter matrix\n";
+	for(i=1;i<=n;i++)
+	{
+		for(j=1;j<=n;j++)
+		{
+			cin>>arr[i][j];
+		}
+	}
+	string str="";
+	for(i=1;i<=n;i++)
+	{
+		for(j=1;j<=n;j++)
+		{
+			if(i==1)
+			{
+				str=str+to_string(arr[i][j]);
+			}
+		}
+	}
+	str=str+str;
+	for (int i=1; i<=n; i++)
+    {
+        string curr="";
+        for (int j=1;j<=n;j++)
+            curr=curr+"-"+to_string(arr[i][j]);
+ 
+        if (str.find(curr) == string::npos)//npos is a constant static member value with the greatest possible 
+		                                   //value for an element of type size_t.
+//To put it simply, think of npos as no-position. As a return value, it is usually used to indicate that 
+//no matches were found in the string. Thus, if it returns true, matches were found at no positions 
+//(i.e., no matches).
+        {
+        	cout<<"yes\n";
+		}
+		else
+		{
+			cout<<"no\n";
+		}
+	}
+}

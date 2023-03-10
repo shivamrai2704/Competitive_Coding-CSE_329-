@@ -1,0 +1,42 @@
+//sum of middle row and sum of middle column
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int n,i,j,mid,sumc=0,sumr=0;
+	cout<<"enter the limit\n";
+	cin>>n;
+	int arr[n][n];
+	cout<<"enter matrix\n";
+	for(i=1;i<=n;i++)
+	{
+		for(j=1;j<=n;j++)
+		{
+			cin>>arr[i][j];
+		}
+	}
+	if(n%2==0)
+	{
+		mid=n/2;
+	}
+	else
+	{
+		mid=(n/2)+1;
+	}
+	for(i=1;i<=n;i++)
+	{
+		for(j=1;j<=n;j++)
+		{
+			if(i==mid)
+			{
+				sumr=sumr+arr[i][j];	
+			}
+			if(j==mid)
+			{
+				sumc=sumc+arr[i][mid];
+			}
+		}
+	}
+	cout<<"sum of middle elements of rows is "<<sumr<<endl;
+	cout<<"sum of middle elements of columns is "<<sumc<<endl;
+}
